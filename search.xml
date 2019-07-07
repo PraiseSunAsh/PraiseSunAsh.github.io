@@ -4,17 +4,46 @@
   
     
     <entry>
-      <title>计算机网络第一弹</title>
-      <link href="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/"/>
-      <url>/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/</url>
+      <title>计算机网络第二弹</title>
+      <link href="/2019/07/07/ji-suan-ji-wang-luo-di-er-dan/"/>
+      <url>/2019/07/07/ji-suan-ji-wang-luo-di-er-dan/</url>
       
-        <content type="html"><![CDATA[<p><em>本系列是根据Crash Course Computer Science P28到 P30总结的笔记，部分定义参考维基百科，为了便于理解有些概念解释的可能不是很严谨，如有错误欢迎指出 (｀・ω・´)</em></p><p><em>课程链接不放了，自行B站搜索”计算机速成课”</em></p><h2 id="局域网（LAN）"><a href="#局域网（LAN）" class="headerlink" title="局域网（LAN）"></a>局域网（LAN）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>计算机间近距离构成的小型网络</strong></p><h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p>局域网的实现之一，相对而言最成功 （1970）</p><p>ps:最简单的实现形式就是一根网线(所谓的以太网电线)连着多台计算机</p><h2 id="MAC（媒体访问控制）"><a href="#MAC（媒体访问控制）" class="headerlink" title="MAC（媒体访问控制）"></a>MAC（媒体访问控制）</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>当数据在网线中走的时候，计算机无法判断数据是给自己的还是给其他设备的。此时只需要在每个传输的数据包前缀加上目标计算机的mac地址，目标计算机在监听网线数据的时候一看是给自己的，就会监听这段数据。</p><p>ps：通常是指物理地址，比如有熊孩子蹭你家wifi，此时你禁掉他的网络其本质就是把他的mac地址拉黑</p><h2 id="CSMA-Carrier-Sense-Multiple-Access-载波侦听多路访问"><a href="#CSMA-Carrier-Sense-Multiple-Access-载波侦听多路访问" class="headerlink" title="CSMA(Carrier Sense Multiple Access/载波侦听多路访问)"></a>CSMA(Carrier Sense Multiple Access/载波侦听多路访问)</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>是实现MAC的一种协议</p><h3 id="Carrier（载体-载波）"><a href="#Carrier（载体-载波）" class="headerlink" title="Carrier（载体/载波）"></a>Carrier（载体/载波）</h3><p>对于以太网就是铜线，对于Wifi就是空气</p><h3 id="Carrier-Sense-载波侦听"><a href="#Carrier-Sense-载波侦听" class="headerlink" title="Carrier Sense(载波侦听)"></a>Carrier Sense(载波侦听)</h3><p>是指计算机在以太网中的计算机在发送数据前 ，必须对介质进行监听，当确认介质空闲时，才可以发送。</p><p>Multiple Access（多路访问）:多台计算机可以连一根网线，一台计算机发送的信息也能被多台计算机接收。</p><h3 id="宽带"><a href="#宽带" class="headerlink" title="宽带"></a>宽带</h3><p>载体传输数据的速度 </p><h2 id="指数退避"><a href="#指数退避" class="headerlink" title="指数退避"></a>指数退避</h2><p>一种算法，用于描述某些进程。比如当你没网的时候隔1分钟会重新拨号，如果拨号失败隔两分钟会再试一次，再失败会隔四分钟再试一次，时间间隔呈指数级增加。</p><h2 id="冲突域"><a href="#冲突域" class="headerlink" title="冲突域"></a>冲突域</h2><p>网络载体和在其中设备的总称。</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/01-01.PNG" alt></p><p>上述就构成了一个冲突域</p><h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><p>一种网络设备，意义重大</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/01-02.gif" alt></p><p>ps：交换机可以更好的避免数据冲突，互联网也是这样构建出来的。</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/01-03.PNG" alt></p><p>pps：注意一个细节，交换机使得一台pc到另一台pc之间有多条路线可以走，这就引出了路由的问题。</p><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>定义：在网络中把一个信息从源送到目标的这个过程。</p><h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><p>传输数据的一种方式，用专门的线路来传输数据。以前在老式电话中用的较多，但目前一些重要机构(银行，军队)仍会采用这种方式。</p><h2 id="报文互换-存储转发交换"><a href="#报文互换-存储转发交换" class="headerlink" title="报文互换(存储转发交换)"></a>报文互换(存储转发交换)</h2><p>传输数据的另一种方式，存储接收的信息，然后根据其目标选择线路。比电路交换要灵活。</p><h3 id="跳数-hop-count"><a href="#跳数-hop-count" class="headerlink" title="跳数(hop count)"></a>跳数(hop count)</h3><p>消息经过结点的次数，可以用来判断路由问题。</p><h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><p>将数据拆成多个数据包，然后通过路由传递。</p><h3 id="IP-Internet-protocol-互联网协议"><a href="#IP-Internet-protocol-互联网协议" class="headerlink" title="IP(Internet protocol/互联网协议)"></a>IP(Internet protocol/互联网协议)</h3><p>规范了每个报文的具体格式</p><h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p>一组以点分隔的四组数字，用来记录服务器的地址。</p><h3 id="阻塞控制"><a href="#阻塞控制" class="headerlink" title="阻塞控制"></a>阻塞控制</h3><p>路由器会平衡与其他路由器间的负载，以确保传输可以快速可靠。</p><h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>用于解决数据包到达目标后的乱序问题。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="IP-Internet-Protocol-互联网协议"><a href="#IP-Internet-Protocol-互联网协议" class="headerlink" title="IP(Internet Protocol) - 互联网协议"></a>IP(Internet Protocol) - 互联网协议</h2><p>一个标准，就像邮件，每逢邮件必须有地址，必须有收发信人，每封邮件都必须遵循这个标准才能送出去。</p><p>数据包也是如此。</p><p>互联网协议是一个很底层的协议，从图中就成看出。</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-er-dan/01.PNG" alt></p><h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p>头部：存放目标地址，也就是元数据(metadata)。</p><p>尾部 :  存放要传输数据流。 </p><h2 id="UDP-User-Datagram-Protocol-用户数据协议"><a href="#UDP-User-Datagram-Protocol-用户数据协议" class="headerlink" title="UDP(User Datagram Protocol) - 用户数据协议"></a>UDP(User Datagram Protocol) - 用户数据协议</h2><h3 id="组成-1"><a href="#组成-1" class="headerlink" title="组成"></a>组成</h3><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-er-dan/02.PNG" alt></p><p>UDP头部:  存放一些更详细的信息，其中也包括端口号和校验和。</p><p>端口号：操作系统概念，每个要访问网络的app都需要像OS申请一个端口号。数据包中的端口号可以让操作系统明白一个数据包到底要给哪个应用程序。</p><p>校验和(Checksum)：16位二进制数的一串数据，用于检查数据是否正确。</p><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>不支持数据修复和数据重发机制（无法实现断点续传），接收方得知数据损坏只能扔掉。 </p><p>但是UDP简单并且迅速，适合即时通讯和网络游戏这类应用程序，不像TCP那样一定要等确认码。</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-er-dan/05.PNG" alt></p><h2 id="TCP-Transmission-Control-Protocol-传输控制协议"><a href="#TCP-Transmission-Control-Protocol-传输控制协议" class="headerlink" title="TCP(Transmission Control Protocol) - 传输控制协议"></a>TCP(Transmission Control Protocol) - 传输控制协议</h2><h3 id="组成-2"><a href="#组成-2" class="headerlink" title="组成"></a>组成</h3><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-er-dan/03.PNG" alt></p><p>TCP头部：也有端口号和校验和。</p><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ol><li><p>每个数据包中有序号，这使得接收方可以很容易讲数据包排成正确的顺序，即使到达时间不同。</p></li><li><p>在TCP协议中，接收方的计算机在每次收到数据包并通过校验和检查无误后，会给发送方反馈一个确认码(ACK)，代表收到了。这时才会继续传输下一个数据包。确认码的成功率和来回时间可以用来判断网络状况，计算机可以利用这个信息调整发包速率，缓解拥堵问题。</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-er-dan/04.PNG" alt></p></li></ol><h2 id="DNS-Domain-Name-System-域名系统"><a href="#DNS-Domain-Name-System-域名系统" class="headerlink" title="DNS(Domain Name System) - 域名系统"></a>DNS(Domain Name System) - 域名系统</h2><p>一个专门为每台服务器做的“电话簿”，域名由服务商提供。</p>]]></content>
       
       
       
         <tags>
             
-            <tag> 计算机网络 LAN CSMA </tag>
+            <tag> 计算机网络 </tag>
+            
+            <tag> UDP </tag>
+            
+            <tag> TCP </tag>
+            
+            <tag> IP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机网络第一弹</title>
+      <link href="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/"/>
+      <url>/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/</url>
+      
+        <content type="html"><![CDATA[<p><em>本系列是根据Crash Course Computer Science P28到 P30总结的笔记，部分定义参考维基百科，为了便于理解有些概念解释的可能不是很严谨，如有错误欢迎指出 (｀・ω・´)</em></p><p><em>课程链接不放了，自行B站搜索”计算机速成课”</em></p><h2 id="局域网（LAN）"><a href="#局域网（LAN）" class="headerlink" title="局域网（LAN）"></a>局域网（LAN）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>计算机间近距离构成的小型网络</strong></p><h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p>局域网的实现之一，相对而言最成功 （1970）</p><p>ps:最简单的实现形式就是一根网线(所谓的以太网电线)连着多台计算机</p><h3 id="广域网-WAN"><a href="#广域网-WAN" class="headerlink" title="广域网(WAN)"></a>广域网(WAN)</h3><p>由局域网组成的网络</p><p>ISP:互联网服务提供商，WAN的路由器一般归他们管(移动，联通，电信)</p><h2 id="MAC（媒体访问控制）"><a href="#MAC（媒体访问控制）" class="headerlink" title="MAC（媒体访问控制）"></a>MAC（媒体访问控制）</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>当数据在网线中走的时候，计算机无法判断数据是给自己的还是给其他设备的。此时只需要在每个传输的数据包前缀加上目标计算机的mac地址，目标计算机在监听网线数据的时候一看是给自己的，就会监听这段数据。</p><p>ps：通常是指物理地址，比如有熊孩子蹭你家wifi，此时你禁掉他的网络其本质就是把他的mac地址拉黑</p><h2 id="CSMA-Carrier-Sense-Multiple-Access-载波侦听多路访问"><a href="#CSMA-Carrier-Sense-Multiple-Access-载波侦听多路访问" class="headerlink" title="CSMA(Carrier Sense Multiple Access/载波侦听多路访问)"></a>CSMA(Carrier Sense Multiple Access/载波侦听多路访问)</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>是实现MAC的一种协议</p><h3 id="Carrier（载体-载波）"><a href="#Carrier（载体-载波）" class="headerlink" title="Carrier（载体/载波）"></a>Carrier（载体/载波）</h3><p>对于以太网就是铜线，对于Wifi就是空气</p><h3 id="Carrier-Sense-载波侦听"><a href="#Carrier-Sense-载波侦听" class="headerlink" title="Carrier Sense(载波侦听)"></a>Carrier Sense(载波侦听)</h3><p>是指计算机在以太网中的计算机在发送数据前 ，必须对介质进行监听，当确认介质空闲时，才可以发送。</p><p>Multiple Access（多路访问）:多台计算机可以连一根网线，一台计算机发送的信息也能被多台计算机接收。</p><h3 id="宽带"><a href="#宽带" class="headerlink" title="宽带"></a>宽带</h3><p>载体传输数据的速度 </p><h2 id="指数退避"><a href="#指数退避" class="headerlink" title="指数退避"></a>指数退避</h2><p>一种算法，用于描述某些进程。比如当你没网的时候隔1分钟会重新拨号，如果拨号失败隔两分钟会再试一次，再失败会隔四分钟再试一次，时间间隔呈指数级增加。</p><h2 id="冲突域"><a href="#冲突域" class="headerlink" title="冲突域"></a>冲突域</h2><p>网络载体和在其中设备的总称。</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/01-01.PNG" alt></p><p>上述就构成了一个冲突域</p><h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><p>一种网络设备，意义重大</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/01-02.gif" alt></p><p>ps：交换机可以更好的避免数据冲突，互联网也是这样构建出来的。</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/01-03.PNG" alt></p><p>pps：注意一个细节，交换机使得一台pc到另一台pc之间有多条路线可以走，这就引出了路由的问题。</p><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>定义：在网络中把一个信息从源送到目标的这个过程。</p><h2 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h2><p>传输数据的一种方式，用专门的线路来传输数据。以前在老式电话中用的较多，但目前一些重要机构(银行，军队)仍会采用这种方式。</p><h2 id="报文互换-存储转发交换"><a href="#报文互换-存储转发交换" class="headerlink" title="报文互换(存储转发交换)"></a>报文互换(存储转发交换)</h2><p>传输数据的另一种方式，存储接收的信息，然后根据其目标选择线路。比电路交换要灵活。</p><h3 id="跳数-hop-count"><a href="#跳数-hop-count" class="headerlink" title="跳数(hop count)"></a>跳数(hop count)</h3><p>消息经过结点的次数，可以用来判断路由问题。</p><p>ps：可以用traceroute查看跳了几次</p><p><img src="/2019/07/07/ji-suan-ji-wang-luo-di-yi-dan/01-04.PNG" alt></p><p>从图中可以看出这个数据经历了11次中转</p><h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><p>将数据拆成多个数据包，然后通过路由传递。</p><h3 id="IP-Internet-protocol-互联网协议"><a href="#IP-Internet-protocol-互联网协议" class="headerlink" title="IP(Internet protocol/互联网协议)"></a>IP(Internet protocol/互联网协议)</h3><p>规范了每个报文的具体格式</p><h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p>一组以点分隔的四组数字，用来记录服务器的地址。</p><h3 id="阻塞控制"><a href="#阻塞控制" class="headerlink" title="阻塞控制"></a>阻塞控制</h3><p>路由器会平衡与其他路由器间的负载，以确保传输可以快速可靠。</p><h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>用于解决数据包到达目标后的乱序问题。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+            <tag> LAN </tag>
+            
+            <tag> CSMA </tag>
             
         </tags>
       
@@ -33,7 +62,9 @@
       
         <tags>
             
-            <tag> 路径规划 前端 </tag>
+            <tag> 路径规划 </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -52,7 +83,11 @@
       
         <tags>
             
-            <tag> 算法 递归 Java </tag>
+            <tag> 算法 </tag>
+            
+            <tag> 递归 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
